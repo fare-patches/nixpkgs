@@ -8,6 +8,7 @@ rec {
     fix-stamp = git-version : "";
     targets = "java,js,php,python,ruby";
     modules = false;
+    extraOptions = [];
   };
 
   unstable-params = {
@@ -21,6 +22,7 @@ rec {
     '';
     targets = "arm,java,js,php,python,riscv-32,riscv-64,ruby,x86,x86-64"; # eats 100% cpu on _digest
     modules = false;
+    extraOptions = ["--enable-rtlib-debug"];
   };
 
   export-gambopt = params : "export GAMBOPT=${params.buildRuntimeOptions} ;";
