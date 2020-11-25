@@ -9,7 +9,7 @@ selfPop (gerbil-support: with gerbil-support; {
   prePackages-unstable =
     let names = ["gerbil-libp2p" "smug-gerbil"
                  "gerbil-utils" "gerbil-crypto" "gerbil-poo" "gerbil-persist" "gerbil-ethereum"
-                 ];
+                 "glow-lang"];
         pk = name: callPackage "${./.}/${name}.nix" (unpop prePackage-defaults);
         f = name: { inherit name; value = pk name; }; in
     builtins.listToAttrs (map f names);
