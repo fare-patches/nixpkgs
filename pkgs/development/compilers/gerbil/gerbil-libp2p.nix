@@ -1,15 +1,11 @@
-{ pkgs, lib, fetchFromGitHub, gerbil-unstable, gerbil-support, gambit-support }:
+{ lib, fetchFromGitHub, ... }:
 {
   pname = "gerbil-libp2p";
   version = "unstable-2018-12-27";
   git-version = "2376b3f";
-  gerbil-package = "vyzo";
-  gerbil = gerbil-unstable;
-  gerbilInputs = [];
-  buildInputs = []; # Note: at *runtime*, depends on go-libp2p-daemon
-  gambit-params = gambit-support.unstable-params;
-  version-path = "version";
   softwareName = "Gerbil-libp2p";
+  gerbil-package = "vyzo";
+  buildInputs = []; # Note: at *runtime*, this depends on go-libp2p-daemon running
   pre-src = {
     fun = fetchFromGitHub;
     owner = "vyzo";
